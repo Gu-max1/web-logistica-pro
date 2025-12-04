@@ -1,155 +1,580 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Examen Semestral | Optimización Logística</title>
+    <title>Optimización Logística en Zona Libre de Colón | Martec Enterprise S.A.</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Fuentes e Iconos -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Icono de camión -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚢</text></svg>">
 </head>
+
 <body>
 
-    <!-- Barra de Navegación -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <div class="logo">Proyecto<span>Semestral</span></div>
+    <!-- Navegación -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">Martec<span>Enterprise</span></div>
             <ul class="nav-links">
-                <li><a href="#" class="active">Inicio</a></li>
+                <li><a href="#inicio" class="active">Inicio</a></li>
                 <li><a href="#problema">Problema</a></li>
-                <li><a href="#fases">Metodología</a></li>
+                <li><a href="#metodologia">Metodología</a></li>
+                <li><a href="#analisis">Análisis</a></li>
                 <li><a href="#video">Video</a></li>
+                <li><a href="#equipo">Equipo</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Header: Título del Proyecto (Requisito: Vincular Matemática y Área de Estudio) -->
-    <header class="hero">
-        <div class="hero-overlay">
-            <div class="container hero-content">
-                <span class="badge">Licenciatura en Adm. de Empresas Marítimas</span>
-                <h1>Optimización Logística en PYME Portuaria</h1>
-                <p>Implementación de modelos matemáticos para mejorar la eficiencia en la descarga de contenedores.</p>
-                <a href="#fases" class="btn">Ver Investigación</a>
-            </div>
+    <!-- Hero -->
+    <header id="inicio" class="hero">
+        <div class="hero-content">
+            <span class="badge">Licenciatura en Administración de Empresas Marítimas</span>
+            <h1>Optimización Logística en Zona Libre de Colón</h1>
+            <p>Implementación de modelos matemáticos para mejorar la eficiencia en la entrega de mercancías en Martec
+                Enterprise S.A.</p>
+            <a href="#problema" class="btn">Ver Investigación</a>
         </div>
     </header>
 
-    <!-- FASE 1: Planificación y Definición del Problema -->
-    <section id="problema" class="about-section">
-        <div class="container about-grid">
-            <div class="about-text">
-                <div class="phase-tag">Fase 1: Planificación</div>
-                <h2>Definición del Problema</h2>
-                <p><strong>El Desafío:</strong> Se detectó una congestión recurrente en el muelle de carga de la PYME local, generando retrasos del 25% en la entrega.</p>
-                <p><strong>Hipótesis Matemática:</strong> Mediante la aplicación de un <em>Modelo de Programación Lineal</em> y <em>Teoría de Colas</em>, es posible reducir el tiempo de espera, optimizando la asignación de grúas según el flujo de llegada estocástico.</p>
-            </div>
-            <div class="about-image">
-                <!-- Imagen alusiva a datos o puerto -->
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Análisis de Datos">
+    <!-- Estadísticas Clave -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-clock"></i>
+                    <div class="stat-number">45</div>
+                    <div class="stat-label">minutos ahorrados por contenedor</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-chart-line"></i>
+                    <div class="stat-number">15%</div>
+                    <div class="stat-label">reducción en tiempo de descarga</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-box"></i>
+                    <div class="stat-number">30-45</div>
+                    <div class="stat-label">días de tránsito China-Panamá</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-number">3-4</div>
+                    <div class="stat-label">personal optimizado por descarga</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- FASE 2: Ejecución y Evidencias -->
-    <section id="fases" class="values-section">
+    <!-- Definición del Problema -->
+    <section id="problema" class="problema-section">
         <div class="container">
-            <h2>Fases del Proyecto (Metodología)</h2>
-            <p style="margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
-                Siguiendo los pasos del diseño metodológico para la recolección de datos y generación de evidencias.
-            </p>
-            
-            <div class="values-grid">
-                <!-- Paso 1 -->
-                <div class="value-card">
-                    <div class="step-number">01</div>
+            <div class="problema-grid">
+                <div class="problema-content">
+                    <h2>Definición del Problema</h2>
+                    <h3><i class="fas fa-exclamation-triangle"></i> El Desafío</h3>
+                    <p>La Zona Libre de Colón enfrenta dificultades recurrentes en la entrega oportuna de mercancías
+                        debido a la congestión portuaria, procesos administrativos lentos y falta de organización
+                        logística interna.</p>
+
+                    <h3><i class="fas fa-calculator"></i> Hipótesis Matemática</h3>
+                    <p>Mediante la aplicación de <strong>Programación Lineal</strong> y <strong>Teoría de
+                            Colas</strong>, es posible reducir significativamente los tiempos de espera, optimizando la
+                        asignación de recursos según el flujo de llegada.</p>
+
+                    <div class="highlight-box">
+                        <h4>Causas Principales:</h4>
+                        <ul>
+                            <li><i class="fas fa-ship"></i> Congestión portuaria</li>
+                            <li><i class="fas fa-file-alt"></i> Documentación incompleta o errores</li>
+                            <li><i class="fas fa-truck"></i> Escasez de transporte</li>
+                            <li><i class="fas fa-cloud-rain"></i> Condiciones climáticas adversas</li>
+                            <li><i class="fas fa-tasks"></i> Planificación logística ineficiente</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="problema-image">
+                    <img src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=800"
+                        alt="Puerto de Contenedores">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Martec Enterprise -->
+    <section class="empresa-section">
+        <div class="container">
+            <div class="empresa-grid">
+                <div class="empresa-image">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800"
+                        alt="Zona Libre de Colón">
+                </div>
+                <div class="empresa-content">
+                    <h2>Martec Enterprise S.A.</h2>
+                    <p class="empresa-location"><i class="fas fa-map-marker-alt"></i> France Field, Zona Libre de Colón
+                    </p>
+                    <p>Martec Enterprise S.A. es una empresa pequeña dedicada a la importación y exportación de
+                        mercancía para distintos clientes en la Zona Libre de Colón.</p>
+
+                    <h3>Objetivo del Proyecto</h3>
+                    <p>Mejorar el tiempo para retirar contenedores del puerto, optimizar la descarga y agilizar el
+                        despacho de mercancías, incrementando la rentabilidad operativa.</p>
+
+                    <div class="empresa-stats">
+                        <div class="empresa-stat">
+                            <i class="fas fa-calendar"></i>
+                            <span>Oct-Nov 2025</span>
+                            <small>Periodo de estudio</small>
+                        </div>
+                        <div class="empresa-stat">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <span>Ningbo-Panamá</span>
+                            <small>Ruta analizada</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metodología -->
+    <section id="metodologia" class="metodologia-section">
+        <div class="container">
+            <h2>Metodología de Investigación</h2>
+            <p class="section-subtitle">Enfoque descriptivo y analítico para identificar factores que generan retrasos
+                en la logística</p>
+
+            <div class="fases-grid">
+                <div class="fase-card">
+                    <div class="fase-number">01</div>
                     <i class="fas fa-clipboard-list"></i>
                     <h3>Recolección de Datos</h3>
-                    <p>Registro de 200 puntos de datos sobre tiempos de servicio y llegada de camiones en campo.</p>
+                    <p>Registro detallado de tiempos en cada etapa: tránsito, liberación, espera, traslado y descarga
+                        del contenedor desde Ningbo hasta la bodega.</p>
                 </div>
-                <!-- Paso 2 -->
-                <div class="value-card">
-                    <div class="step-number">02</div>
+
+                <div class="fase-card">
+                    <div class="fase-number">02</div>
+                    <i class="fas fa-search"></i>
+                    <h3>Análisis Documental</h3>
+                    <p>Revisión de guías de embarque (BL), órdenes de transporte, reportes de almacén y registros de
+                        tiempos para identificar cuellos de botella.</p>
+                </div>
+
+                <div class="fase-card">
+                    <div class="fase-number">03</div>
                     <i class="fas fa-calculator"></i>
                     <h3>Modelado Matemático</h3>
-                    <p>Codificación del algoritmo de optimización (Python/Excel) para minimizar tiempos muertos.</p>
+                    <p>Aplicación de programación lineal, optimización de rutas y análisis de datos para reducir tiempos
+                        operativos.</p>
                 </div>
-                <!-- Paso 3 -->
-                <div class="value-card">
-                    <div class="step-number">03</div>
+
+                <div class="fase-card">
+                    <div class="fase-number">04</div>
+                    <i class="fas fa-eye"></i>
+                    <h3>Observación Directa</h3>
+                    <p>Seguimiento del flujo logístico desde la llegada del contenedor hasta la descarga en bodega,
+                        documentando procesos reales.</p>
+                </div>
+
+                <div class="fase-card">
+                    <div class="fase-number">05</div>
+                    <i class="fas fa-comments"></i>
+                    <h3>Entrevistas</h3>
+                    <p>Conversaciones con personal de bodega, transportistas y encargados de logística para entender
+                        desafíos operacionales.</p>
+                </div>
+
+                <div class="fase-card">
+                    <div class="fase-number">06</div>
                     <i class="fas fa-chart-line"></i>
-                    <h3>Resultados</h3>
-                    <p>Reducción simulada del 15% en tiempos de espera, validando la hipótesis inicial.</p>
+                    <h3>Evaluación de Resultados</h3>
+                    <p>Comparación de tiempos reales vs. tiempos estimados, identificación de mejoras y propuestas de
+                        soluciones aplicables.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Requisito: VIDEO RESUMEN -->
+    <!-- Timeline del Proceso -->
+    <section class="timeline-section">
+        <div class="container">
+            <h2>Línea de Tiempo del Proceso Logístico</h2>
+            <p class="section-subtitle">Seguimiento completo del contenedor desde Ningbo, China hasta Martec Enterprise
+                S.A.</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-play-circle"></i></div>
+                    <div class="timeline-content">
+                        <h3>Salida de Ningbo</h3>
+                        <p class="timeline-date">22 Octubre 2025, 19:03 PM</p>
+                        <p>El contenedor sale vía terrestre desde el origen en Ningbo, China.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-ship"></i></div>
+                    <div class="timeline-content">
+                        <h3>Llegada al Puerto de Ningbo</h3>
+                        <p class="timeline-date">29 Octubre 2025, 17:43 PM</p>
+                        <p>Tránsito terrestre: <strong>166 horas 40 minutos</strong> (6 días, 22 horas, 40 minutos)</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-water"></i></div>
+                    <div class="timeline-content">
+                        <h3>Tránsito Marítimo</h3>
+                        <p class="timeline-date">29 Oct - 29 Nov 2025</p>
+                        <p>Viaje por mar: <strong>745 horas 17 minutos</strong> (31 días, 1 hora, 17 minutos)</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-anchor"></i></div>
+                    <div class="timeline-content">
+                        <h3>Llegada a Puerto Manzanillo</h3>
+                        <p class="timeline-date">29 Noviembre 2025, 19:00 PM</p>
+                        <p>Contenedor arriba a Panamá, inicia proceso de liberación.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-file-alt"></i></div>
+                    <div class="timeline-content">
+                        <h3>Espera Administrativa</h3>
+                        <p class="timeline-date">30 Nov - 2 Dic 2025</p>
+                        <p>Tiempo en puerto: <strong>72 horas</strong> (fin de semana + documentación)</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-truck"></i></div>
+                    <div class="timeline-content">
+                        <h3>Salida del Puerto</h3>
+                        <p class="timeline-date">Variable</p>
+                        <p>Tiempo de salida: <strong>3-24 horas</strong> (según congestión portuaria)</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-box-open"></i></div>
+                    <div class="timeline-content">
+                        <h3>Descarga en Bodega</h3>
+                        <p class="timeline-date">Final del proceso</p>
+                        <p>Tiempo de descarga: <strong>5 horas</strong> (con 3 personas) → <strong>4h 15min</strong>
+                            (optimizado)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Análisis Matemático -->
+    <section id="analisis" class="analisis-section">
+        <div class="container">
+            <h2>Análisis Matemático y Optimización</h2>
+            <p class="section-subtitle">Aplicación de modelos matemáticos para resolver problemas logísticos reales</p>
+
+            <!-- Problema 1 -->
+            <div class="problema-matematico">
+                <h3><i class="fas fa-route"></i> Problema 1: Optimización del Tránsito Terrestre</h3>
+                <p><strong>Contexto:</strong> El contenedor tarda 166 horas y 40 minutos en llegar del origen al puerto
+                    de Ningbo. Se propone implementar un sistema de coordinación que reduzca el tiempo en un 8%.</p>
+
+                <div class="calculo-box">
+                    <h4>Cálculo del Ahorro:</h4>
+                    <div class="formula">
+                        Duración inicial = 166.67 horas<br>
+                        Reducción = 166.67 × 0.08 = 13.33 horas<br>
+                        <strong>Ahorro: 13 horas y 20 minutos</strong>
+                    </div>
+                    <div class="resultado">
+                        <strong>Resultado:</strong> El trayecto terrestre quedaría en <strong>153 horas y 20
+                            minutos</strong> (6 días, 9 horas, 20 minutos)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problema 2 -->
+            <div class="problema-matematico">
+                <h3><i class="fas fa-users"></i> Problema 2: Rendimiento del Equipo de Descarga</h3>
+                <p><strong>Contexto:</strong> La descarga toma 5 horas con 3 trabajadores. Se evalúa agregar un tercer
+                    ayudante para agilizar el proceso.</p>
+
+                <div class="calculo-box">
+                    <h4>Análisis de Productividad:</h4>
+                    <div class="formula">
+                        Trabajo total = 3 personas × 5 horas = 15 horas-persona<br>
+                        Nuevo tiempo = 15 horas-persona ÷ 4 personas = 3.75 horas<br>
+                        <strong>Tiempo con 4 personas: 3 horas y 45 minutos</strong>
+                    </div>
+                    <div class="resultado">
+                        <strong>Ahorro por contenedor:</strong> 1 hora y 15 minutos (25% más rápido)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problema 3 -->
+            <div class="problema-matematico">
+                <h3><i class="fas fa-ship"></i> Problema 3: Optimización de Salida del Puerto</h3>
+                <p><strong>Contexto:</strong> Después de 3 días en puerto, el contenedor puede tardar 3 horas (fluido) o
+                    24 horas (congestión). Se negocia reducir la probabilidad de congestión del 35% al 20%.</p>
+
+                <div class="calculo-box">
+                    <h4>Tiempo Esperado (Antes):</h4>
+                    <div class="formula">
+                        E[T] = (3h × 0.65) + (24h × 0.35)<br>
+                        E[T] = 1.95 + 8.4 = 10.35 horas
+                    </div>
+
+                    <h4>Tiempo Esperado (Después):</h4>
+                    <div class="formula">
+                        E[T] = (3h × 0.80) + (24h × 0.20)<br>
+                        E[T] = 2.4 + 4.8 = 7.2 horas
+                    </div>
+
+                    <div class="resultado">
+                        <strong>Ahorro promedio:</strong> 3.15 horas por contenedor (30% de reducción)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Algoritmo de Optimización -->
+    <section class="codigo-section">
+        <div class="container">
+            <h2>Algoritmo de Optimización Logística</h2>
+            <p class="section-subtitle">Implementación en Python para calcular y optimizar tiempos logísticos</p>
+
+            <div class="codigo-container">
+                <div class="codigo-header">
+                    <span class="codigo-dot dot-red"></span>
+                    <span class="codigo-dot dot-yellow"></span>
+                    <span class="codigo-dot dot-green"></span>
+                    <span style="margin-left: 10px; color: #8892b0;">optimizacion_logistica.py</span>
+                </div>
+                <pre><code><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime, timedelta
+
+<span class="comment"># Datos de entrada</span>
+salida_terrestre = datetime(2025, 10, 22, 19, 3)
+llegada_puerto_CN = datetime(2025, 10, 29, 17, 43)
+llegada_Manzanillo = datetime(2025, 11, 29, 19, 0)
+
+TIEMPO_ESPERA_PUERTO = <span class="number">72</span>  <span class="comment"># horas</span>
+TIEMPO_SALIDA_MIN = <span class="number">3</span>      <span class="comment"># horas (fluido)</span>
+TIEMPO_SALIDA_MAX = <span class="number">24</span>     <span class="comment"># horas (congestión)</span>
+TIEMPO_DESCARGA = <span class="number">5</span>        <span class="comment"># horas</span>
+PERSONAL_BASE = <span class="number">3</span>          <span class="comment"># personas</span>
+
+<span class="keyword">def</span> <span class="function">calcular_tiempo</span>(inicio, fin):
+    delta = fin - inicio
+    <span class="keyword">return</span> delta.total_seconds() / <span class="number">3600</span>  <span class="comment"># convertir a horas</span>
+
+<span class="comment"># Cálculo de tiempos por etapa</span>
+tiempo_terrestre = calcular_tiempo(salida_terrestre, llegada_puerto_CN)
+tiempo_maritimo = calcular_tiempo(llegada_puerto_CN, llegada_Manzanillo)
+
+<span class="keyword">print</span>(<span class="string">f"Tiempo terrestre: {tiempo_terrestre:.2f} horas"</span>)
+<span class="keyword">print</span>(<span class="string">f"Tiempo marítimo: {tiempo_maritimo:.2f} horas"</span>)
+
+<span class="comment"># Optimización con personal adicional</span>
+<span class="keyword">def</span> <span class="function">optimizar_descarga</span>(personal_extra):
+    personal_total = PERSONAL_BASE + personal_extra
+    tiempo_optimizado = TIEMPO_DESCARGA * (PERSONAL_BASE / personal_total)
+    ahorro = TIEMPO_DESCARGA - tiempo_optimizado
+    <span class="keyword">return</span> tiempo_optimizado, ahorro
+
+tiempo_opt, ahorro = optimizar_descarga(<span class="number">1</span>)
+<span class="keyword">print</span>(<span class="string">f"Tiempo descarga optimizado: {tiempo_opt:.2f} horas"</span>)
+<span class="keyword">print</span>(<span class="string">f"Ahorro: {ahorro:.2f} horas"</span>)</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
     <section id="video" class="video-section">
         <div class="container">
             <h2>Video Resumen del Proyecto</h2>
-            <p>Evidencia visual del desarrollo y conclusiones.</p>
-            
-            <!-- Aquí iría tu video de YouTube. He puesto uno de ejemplo -->
+            <p class="section-subtitle">Presentación visual del desarrollo, metodología y conclusiones de la
+                investigación</p>
+
             <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/ScMzIvxBSi4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Video Resumen - Optimización Logística"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </div>
         </div>
     </section>
 
-    <!-- FASE 3: Conclusiones y Equipo -->
-    <section class="team-section">
+    <!-- Conclusiones -->
+    <section id="conclusiones" class="conclusiones-section">
+        <div class="container">
+            <h2>Conclusiones y Recomendaciones</h2>
+            <p class="section-subtitle">Hallazgos clave y propuestas de mejora para la logística en Zona Libre de Colón
+            </p>
+
+            <div class="conclusion-grid">
+                <div class="conclusion-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Optimización Validada</h3>
+                    <p>El modelo matemático reduce el tiempo de descarga en 15%, ahorrando 45 minutos por contenedor y
+                        2.25 horas-persona por operación.</p>
+                </div>
+
+                <div class="conclusion-card">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <h3>Cuellos de Botella</h3>
+                    <p>Los principales retrasos ocurren en: espera administrativa (72h), documentación incompleta y
+                        congestión portuaria variable.</p>
+                </div>
+
+                <div class="conclusion-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Impacto Operacional</h3>
+                    <p>Mayor rotación de muelles, reducción de costos de mano de obra y mayor capacidad para atender más
+                        contenedores por periodo.</p>
+                </div>
+
+                <div class="conclusion-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Digitalización</h3>
+                    <p>Automatizar procesos documentales y implementar alertas tempranas mejoraría significativamente la
+                        coordinación logística.</p>
+                </div>
+
+                <div class="conclusion-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Coordinación</h3>
+                    <p>Mejorar la comunicación entre puerto, transportista y empresa puede reducir hasta 30% el tiempo
+                        de salida del puerto.</p>
+                </div>
+
+                <div class="conclusion-card">
+                    <i class="fas fa-users-cog"></i>
+                    <h3>Gestión de Personal</h3>
+                    <p>La optimización de recursos humanos con turnos eficientes y apoyo temporal genera ahorros
+                        significativos en operaciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipo -->
+    <section id="equipo" class="team-section">
         <div class="container">
             <h2>Equipo de Investigación</h2>
-            <p>Estudiantes del Centro Regional Universitario de Colón</p>
+            <p class="section-subtitle">Estudiantes de Administración de Empresas Marítimas - Universidad de Panamá, CRU
+                Colón</p>
+
             <div class="team-grid">
                 <div class="team-member">
                     <i class="fas fa-user-graduate"></i>
-                    <h4>Estudiante 1</h4>
-                    <p>Recolección de Datos</p>
+                    <h4>Karla Weeks</h4>
+                    <p>3-742-608</p>
                 </div>
                 <div class="team-member">
                     <i class="fas fa-user-graduate"></i>
-                    <h4>Estudiante 2</h4>
-                    <p>Análisis Matemático</p>
+                    <h4>Chaya Guzman</h4>
+                    <p>00EC351212</p>
                 </div>
                 <div class="team-member">
                     <i class="fas fa-user-graduate"></i>
-                    <h4>Estudiante 3</h4>
-                    <p>Documentación</p>
+                    <h4>Yazmin Casanova</h4>
+                    <p>3-750-357</p>
                 </div>
+                <div class="team-member">
+                    <i class="fas fa-user-graduate"></i>
+                    <h4>Keisury King</h4>
+                    <p>3-760-576</p>
+                </div>
+                <div class="team-member">
+                    <i class="fas fa-user-graduate"></i>
+                    <h4>Jasmin Ceballos</h4>
+                    <p>3-741-1869</p>
+                </div>
+                <div class="team-member">
+                    <i class="fas fa-user-graduate"></i>
+                    <h4>Vinelis Castillo</h4>
+                    <p>3-760-2008</p>
+                </div>
+                <div class="team-member">
+                    <i class="fas fa-user-graduate"></i>
+                    <h4>Mairobis Caicedo</h4>
+                    <p>3-739-711</p>
+                </div>
+                <div class="team-member">
+                    <i class="fas fa-user-graduate"></i>
+                    <h4>Richar Moros</h4>
+                    <p>00EC3513926</p>
+                </div>
+                <div class="team-member">
+                    <i class="fas fa-user-graduate"></i>
+                    <h4>Zurany Antioco</h4>
+                    <p>3-756-169</p>
+                </div>
+                <div class="team-member">
+                    <i class="fas fa-user-graduate"></i>
+                    <h4>Williams Arias</h4>
+                    <p>2-755-501</p>
+                </div>
+                <div class="team-member">
+                    <i class="fas fa-user-graduate"></i>
+                    <h4>Gariel Castillo</h4>
+                    <p>3-748-414</p>
+                </div>
+                <div class="team-member">
+                    <i class="fas fa-user-graduate"></i>
+                    <h4>Jarzinho Lucero</h4>
+                    <p>3-757-131</p>
+                </div>
+            </div>
+
+            <div class="profesor-info">
+                <p><strong>Profesora:</strong> Jessica Jonas</p>
+                <p><strong>Asignatura:</strong> Cálculo Matemático</p>
+                <p><strong>Fecha:</strong> 5 de Diciembre de 2025</p>
             </div>
         </div>
     </section>
 
-    <!-- Footer Actualizado -->
+    <!-- Footer -->
     <footer>
-        <div class="container footer-content">
+        <div class="footer-content">
             <div class="footer-col">
-                <h3>Examen Semestral</h3>
-                <p>
-                    Proyecto de vinculación Matemática - Marítima.
-                    <br>
-                    <span style="font-size: 0.9rem; opacity: 0.8;">Universidad de Panamá - CRU Colón</span>
-                </p>
+                <h3>Proyecto Semestral</h3>
+                <p>Investigación sobre optimización logística en la Zona Libre de Colón, aplicando modelos matemáticos
+                    para mejorar la eficiencia operativa.</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">Universidad de Panamá<br>Centro Regional
+                    Universitario de Colón</p>
             </div>
             <div class="footer-col">
-                <h4>Enlaces Rápidos</h4>
+                <h3>Enlaces Rápidos</h3>
                 <ul>
-                    <li><a href="#problema">Planteamiento</a></li>
-                    <li><a href="#fases">Fases</a></li>
-                    <li><a href="#video">Video</a></li>
+                    <li><a href="#problema">Definición del Problema</a></li>
+                    <li><a href="#metodologia">Metodología</a></li>
+                    <li><a href="#analisis">Análisis Matemático</a></li>
+                    <li><a href="#conclusiones">Conclusiones</a></li>
                 </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-building"></i> Martec Enterprise S.A.</p>
+                <p><i class="fas fa-map-marker-alt"></i> France Field, Zona Libre de Colón</p>
+                <p><i class="fas fa-flag"></i> Panamá</p>
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2024 Licenciatura en Administración de Empresas Marítimas.</p>
+            <p>&copy; 2025 Licenciatura en Administración de Empresas Marítimas - Universidad de Panamá</p>
         </div>
     </footer>
 
+    <script src="js_martec.js"></script>
 </body>
+
 </html>
