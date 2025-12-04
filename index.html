@@ -5,10 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Optimización Logística en Zona Libre de Colón | Martec Enterprise S.A.</title>
+    <meta name="description"
+        content="Investigación sobre la optimización logística en la Zona Libre de Colón. Modelos matemáticos para mejorar la eficiencia en Martec Enterprise S.A.">
+    <meta name="keywords"
+        content="logística, Zona Libre de Colón, optimización, programación lineal, teoría de colas, Martec Enterprise, Panamá">
+    <meta property="og:title" content="Optimización Logística en Zona Libre de Colón">
+    <meta property="og:description" content="Mejorando la eficiencia logística mediante modelos matemáticos.">
+    <meta property="og:image" content="hero-bg.png">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚢</text></svg>">
 </head>
@@ -19,11 +27,17 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="logo">Martec<span>Enterprise</span></div>
-            <ul class="nav-links">
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#inicio" class="active">Inicio</a></li>
                 <li><a href="#problema">Problema</a></li>
                 <li><a href="#metodologia">Metodología</a></li>
                 <li><a href="#analisis">Análisis</a></li>
+                <li><a href="#calculadora">Calculadora</a></li>
                 <li><a href="#video">Video</a></li>
                 <li><a href="#equipo">Equipo</a></li>
             </ul>
@@ -38,6 +52,9 @@
             <p>Implementación de modelos matemáticos para mejorar la eficiencia en la entrega de mercancías en Martec
                 Enterprise S.A.</p>
             <a href="#problema" class="btn">Ver Investigación</a>
+        </div>
+        <div class="moving-container">
+            <i class="fas fa-truck-loading"></i>
         </div>
     </header>
 
@@ -97,8 +114,7 @@
                     </div>
                 </div>
                 <div class="problema-image">
-                    <img src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=800"
-                        alt="Puerto de Contenedores">
+                    <img src="problem-bg.png" alt="Puerto de Contenedores" loading="lazy">
                 </div>
             </div>
         </div>
@@ -109,8 +125,7 @@
         <div class="container">
             <div class="empresa-grid">
                 <div class="empresa-image">
-                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800"
-                        alt="Zona Libre de Colón">
+                    <img src="company-bg.png" alt="Zona Libre de Colón" loading="lazy">
                 </div>
                 <div class="empresa-content">
                     <h2>Martec Enterprise S.A.</h2>
@@ -140,6 +155,65 @@
         </div>
     </section>
 
+    <!-- Recolección de Datos -->
+    <section class="recoleccion-section">
+        <div class="container">
+            <h2>Recolección de Datos</h2>
+            <p class="section-subtitle">Proceso sistemático de captura y registro de información clave del flujo
+                logístico</p>
+
+            <div class="fases-grid">
+                <div class="fase-card">
+                    <div class="fase-number">01</div>
+                    <i class="fas fa-clock"></i>
+                    <h3>Registro de Tiempos</h3>
+                    <p>Documentación precisa de cada etapa del proceso: tránsito terrestre, tránsito marítimo, espera en
+                        puerto y descarga en bodega.</p>
+                </div>
+
+                <div class="fase-card">
+                    <div class="fase-number">02</div>
+                    <i class="fas fa-file-invoice"></i>
+                    <h3>Documentación Logística</h3>
+                    <p>Recopilación de guías de embarque (BL), órdenes de transporte, manifiestos de carga y reportes de
+                        almacén.</p>
+                </div>
+
+                <div class="fase-card">
+                    <div class="fase-number">03</div>
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Seguimiento de Rutas</h3>
+                    <p>Monitoreo del recorrido completo desde Ningbo, China hasta las instalaciones de Martec Enterprise
+                        en Panamá.</p>
+                </div>
+
+                <div class="fase-card">
+                    <div class="fase-number">04</div>
+                    <i class="fas fa-users"></i>
+                    <h3>Entrevistas al Personal</h3>
+                    <p>Recolección de información cualitativa mediante conversaciones con operadores, supervisores y
+                        personal administrativo.</p>
+                </div>
+
+                <div class="fase-card">
+                    <div class="fase-number">05</div>
+                    <i class="fas fa-camera"></i>
+                    <h3>Registro Fotográfico</h3>
+                    <p>Captura de evidencia visual de las operaciones, infraestructura y condiciones de los procesos
+                        logísticos.</p>
+                </div>
+
+                <div class="fase-card">
+                    <div class="fase-number">06</div>
+                    <i class="fas fa-database"></i>
+                    <h3>Base de Datos</h3>
+                    <p>Consolidación de toda la información recopilada en un sistema organizado para su posterior
+                        análisis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Metodología -->
     <section id="metodologia" class="metodologia-section">
         <div class="container">
@@ -150,22 +224,14 @@
             <div class="fases-grid">
                 <div class="fase-card">
                     <div class="fase-number">01</div>
-                    <i class="fas fa-clipboard-list"></i>
-                    <h3>Recolección de Datos</h3>
-                    <p>Registro detallado de tiempos en cada etapa: tránsito, liberación, espera, traslado y descarga
-                        del contenedor desde Ningbo hasta la bodega.</p>
+                    <i class="fas fa-search"></i>
+                    <h3>Análisis Documental</h3>
+                    <p>Revisión exhaustiva de documentación logística para identificar patrones y cuellos de botella en
+                        el proceso.</p>
                 </div>
 
                 <div class="fase-card">
                     <div class="fase-number">02</div>
-                    <i class="fas fa-search"></i>
-                    <h3>Análisis Documental</h3>
-                    <p>Revisión de guías de embarque (BL), órdenes de transporte, reportes de almacén y registros de
-                        tiempos para identificar cuellos de botella.</p>
-                </div>
-
-                <div class="fase-card">
-                    <div class="fase-number">03</div>
                     <i class="fas fa-calculator"></i>
                     <h3>Modelado Matemático</h3>
                     <p>Aplicación de programación lineal, optimización de rutas y análisis de datos para reducir tiempos
@@ -173,7 +239,7 @@
                 </div>
 
                 <div class="fase-card">
-                    <div class="fase-number">04</div>
+                    <div class="fase-number">03</div>
                     <i class="fas fa-eye"></i>
                     <h3>Observación Directa</h3>
                     <p>Seguimiento del flujo logístico desde la llegada del contenedor hasta la descarga en bodega,
@@ -181,7 +247,7 @@
                 </div>
 
                 <div class="fase-card">
-                    <div class="fase-number">05</div>
+                    <div class="fase-number">04</div>
                     <i class="fas fa-comments"></i>
                     <h3>Entrevistas</h3>
                     <p>Conversaciones con personal de bodega, transportistas y encargados de logística para entender
@@ -189,11 +255,19 @@
                 </div>
 
                 <div class="fase-card">
-                    <div class="fase-number">06</div>
+                    <div class="fase-number">05</div>
                     <i class="fas fa-chart-line"></i>
                     <h3>Evaluación de Resultados</h3>
                     <p>Comparación de tiempos reales vs. tiempos estimados, identificación de mejoras y propuestas de
                         soluciones aplicables.</p>
+                </div>
+
+                <div class="fase-card">
+                    <div class="fase-number">06</div>
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Propuestas de Mejora</h3>
+                    <p>Desarrollo de recomendaciones basadas en datos para optimizar cada etapa del proceso logístico.
+                    </p>
                 </div>
             </div>
         </div>
@@ -299,11 +373,104 @@
                     </div>
                 </div>
             </div>
+            <!-- Calculadora Interactiva -->
+            <section id="calculadora" class="calculadora-section">
+                <div class="container">
+                    <h2>Calculadora de Optimización</h2>
+                    <p class="section-subtitle">Simula diferentes escenarios y visualiza el impacto en tu operación</p>
+
+                    <div class="calculator-embed">
+                        <!-- Aquí puedes embedear el artifact de React que creé -->
+                        <iframe src="calculadora.html" width="100%" height="800" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resultados Visuales -->
+            <section class="resultados-section">
+                <div class="container">
+                    <h2>Resultados del Modelo Matemático</h2>
+                    <p class="section-subtitle">Comparación antes y después de la optimización</p>
+
+                    <!-- Comparación Simple -->
+                    <div class="resultados-grid">
+                        <div class="resultado-card">
+                            <div class="resultado-before">ANTES</div>
+                            <div class="resultado-metric">5 horas</div>
+                            <div class="resultado-label">Descarga por contenedor</div>
+                        </div>
+
+                        <div class="resultado-arrow">→</div>
+
+                        <div class="resultado-card highlight">
+                            <div class="resultado-after">DESPUÉS</div>
+                            <div class="resultado-metric">3.75 horas</div>
+                            <div class="resultado-label">Con optimización</div>
+                        </div>
+                    </div>
+
+                    <!-- Gráficos -->
+                    <div class="charts-grid"
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; margin-top: 4rem;">
+                        <div class="chart-container">
+                            <canvas id="timelineChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="roiChart"></canvas>
+                        </div>
+                        <div class="chart-container" style="grid-column: 1 / -1;">
+                            <canvas id="projectionChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Métricas Clave -->
+                    <div class="metrics-grid"
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 4rem;">
+                        <div class="metric-card"
+                            style="background: var(--secondary); padding: 2rem; border-radius: 12px; text-align: center;">
+                            <div class="metric-icon" style="font-size: 2.5rem; margin-bottom: 1rem;">⏱️</div>
+                            <div class="metric-value" data-target="96"
+                                style="font-size: 3rem; font-weight: 800; color: var(--accent); margin-bottom: 0.5rem;">
+                                0</div>
+                            <div class="metric-label" style="color: var(--text-dim);">Horas ahorradas/año</div>
+                        </div>
+
+                        <div class="metric-card"
+                            style="background: var(--secondary); padding: 2rem; border-radius: 12px; text-align: center;">
+                            <div class="metric-icon" style="font-size: 2.5rem; margin-bottom: 1rem;">💰</div>
+                            <div class="metric-value" data-target="96000"
+                                style="font-size: 3rem; font-weight: 800; color: var(--accent); margin-bottom: 0.5rem;">
+                                $0</div>
+                            <div class="metric-label" style="color: var(--text-dim);">Ahorro proyectado/año</div>
+                        </div>
+
+                        <div class="metric-card"
+                            style="background: var(--secondary); padding: 2rem; border-radius: 12px; text-align: center;">
+                            <div class="metric-icon" style="font-size: 2.5rem; margin-bottom: 1rem;">📦</div>
+                            <div class="metric-value" data-target="50"
+                                style="font-size: 3rem; font-weight: 800; color: var(--accent); margin-bottom: 0.5rem;">
+                                0</div>
+                            <div class="metric-label" style="color: var(--text-dim);">% más contenedores</div>
+                        </div>
+
+                        <div class="metric-card"
+                            style="background: var(--secondary); padding: 2rem; border-radius: 12px; text-align: center;">
+                            <div class="metric-icon" style="font-size: 2.5rem; margin-bottom: 1rem;">📈</div>
+                            <div class="metric-value" data-target="250"
+                                style="font-size: 3rem; font-weight: 800; color: var(--accent); margin-bottom: 0.5rem;">
+                                0</div>
+                            <div class="metric-label" style="color: var(--text-dim);">% ROI en 12 meses</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
 
             <!-- Problema 2 -->
             <div class="problema-matematico">
                 <h3><i class="fas fa-users"></i> Problema 2: Rendimiento del Equipo de Descarga</h3>
-                <p><strong>Contexto:</strong> La descarga toma 5 horas con 3 trabajadores. Se evalúa agregar un tercer
+                <p><strong>Contexto:</strong> La descarga toma 5 horas con 3 trabajadores. Se evalúa agregar un cuarto
                     ayudante para agilizar el proceso.</p>
 
                 <div class="calculo-box">
@@ -343,23 +510,18 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Algoritmo de Optimización -->
-    <section class="codigo-section">
-        <div class="container">
-            <h2>Algoritmo de Optimización Logística</h2>
-            <p class="section-subtitle">Implementación en Python para calcular y optimizar tiempos logísticos</p>
-
-            <div class="codigo-container">
-                <div class="codigo-header">
-                    <span class="codigo-dot dot-red"></span>
-                    <span class="codigo-dot dot-yellow"></span>
-                    <span class="codigo-dot dot-green"></span>
-                    <span style="margin-left: 10px; color: #8892b0;">optimizacion_logistica.py</span>
-                </div>
-                <pre><code><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime, timedelta
+            <!-- Código Python -->
+            <div class="codigo-section">
+                <div class="codigo-container">
+                    <div class="codigo-header">
+                        <div class="codigo-dot dot-red"></div>
+                        <div class="codigo-dot dot-yellow"></div>
+                        <div class="codigo-dot dot-green"></div>
+                        <span
+                            style="color: #8892b0; font-size: 0.9rem; margin-left: 10px;">optimizacion_logistica.py</span>
+                    </div>
+                    <pre><code><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime, timedelta
 
 <span class="comment"># Datos de entrada</span>
 salida_terrestre = datetime(2025, 10, 22, 19, 3)
@@ -393,6 +555,7 @@ tiempo_maritimo = calcular_tiempo(llegada_puerto_CN, llegada_Manzanillo)
 tiempo_opt, ahorro = optimizar_descarga(<span class="number">1</span>)
 <span class="keyword">print</span>(<span class="string">f"Tiempo descarga optimizado: {tiempo_opt:.2f} horas"</span>)
 <span class="keyword">print</span>(<span class="string">f"Ahorro: {ahorro:.2f} horas"</span>)</code></pre>
+                </div>
             </div>
         </div>
     </section>
@@ -405,9 +568,10 @@ tiempo_opt, ahorro = optimizar_descarga(<span class="number">1</span>)
                 investigación</p>
 
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Video Resumen - Optimización Logística"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+                <video controls>
+                    <source src="video explicativo.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de videos.
+                </video>
             </div>
         </div>
     </section>
@@ -465,6 +629,38 @@ tiempo_opt, ahorro = optimizar_descarga(<span class="number">1</span>)
         </div>
     </section>
 
+    <!-- Galería Visual -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2>Galería de Operaciones</h2>
+            <p class="section-subtitle">Visualización de la infraestructura y procesos logísticos</p>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="gallery-1.png" alt="Buque Portacontenedores" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Transporte Marítimo</h4>
+                        <p>Buques de gran calado en ruta Ningbo-Panamá</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-2.png" alt="Detalle Contenedor" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Seguridad de Carga</h4>
+                        <p>Inspección de mecanismos de cierre y precintos</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="problem-bg.png" alt="Puerto Congestionado" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Operaciones Portuarias</h4>
+                        <p>Vista de la congestión en patios de contenedores</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Equipo -->
     <section id="equipo" class="team-section">
         <div class="container">
@@ -475,13 +671,13 @@ tiempo_opt, ahorro = optimizar_descarga(<span class="number">1</span>)
             <div class="team-grid">
                 <div class="team-member">
                     <i class="fas fa-user-graduate"></i>
-                    <h4>Karla Weeks</h4>
-                    <p>3-742-608</p>
+                    <h4>Gariel Castillo</h4>
+                    <p>3-748-414</p>
                 </div>
                 <div class="team-member">
                     <i class="fas fa-user-graduate"></i>
-                    <h4>Chaya Guzman</h4>
-                    <p>00EC351212</p>
+                    <h4>Karla Weeks</h4>
+                    <p>3-742-608</p>
                 </div>
                 <div class="team-member">
                     <i class="fas fa-user-graduate"></i>
@@ -525,8 +721,8 @@ tiempo_opt, ahorro = optimizar_descarga(<span class="number">1</span>)
                 </div>
                 <div class="team-member">
                     <i class="fas fa-user-graduate"></i>
-                    <h4>Gariel Castillo</h4>
-                    <p>3-748-414</p>
+                    <h4>Chaya Guzman</h4>
+                    <p>00EC351212</p>
                 </div>
                 <div class="team-member">
                     <i class="fas fa-user-graduate"></i>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Optimización Logística</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+            color: #ccd6f6;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .calculator-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(17, 34, 64, 0.8);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        h1 {
+            color: #64ffda;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #8892b0;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .input-section {
+            background: rgba(10, 25, 47, 0.6);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            color: #64ffda;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .input-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        input[type="number"],
+        input[type="range"] {
+            flex: 1;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            border-radius: 8px;
+            color: #e6f1ff;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        input[type="number"]:focus,
+        input[type="range"]:focus {
+            outline: none;
+            border-color: #64ffda;
+            background: rgba(100, 255, 218, 0.05);
+        }
+
+        input[type="range"] {
+            padding: 0;
+            height: 8px;
+            cursor: pointer;
+        }
+
+        .value-display {
+            min-width: 80px;
+            text-align: right;
+            color: #e6f1ff;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .results-section {
+            background: linear-gradient(135deg, rgba(100, 255, 218, 0.1) 0%, rgba(102, 126, 234, 0.1) 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid rgba(100, 255, 218, 0.3);
+        }
+
+        .results-title {
+            color: #64ffda;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .result-card {
+            background: rgba(10, 25, 47, 0.8);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .result-card:hover {
+            transform: translateY(-5px);
+            border-color: #64ffda;
+        }
+
+        .result-label {
+            color: #8892b0;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .result-value {
+            color: #64ffda;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+        }
+
+        .result-unit {
+            color: #ccd6f6;
+            font-size: 0.9rem;
+        }
+
+        .comparison-section {
+            background: rgba(10, 25, 47, 0.6);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+        }
+
+        .comparison-title {
+            color: #e6f1ff;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .comparison-bar {
+            margin-bottom: 1.5rem;
+        }
+
+        .comparison-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .bar-container {
+            width: 100%;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #64ffda 100%);
+            border-radius: 15px;
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .savings-highlight {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 1.5rem;
+            border: 2px solid #10b981;
+        }
+
+        .savings-highlight h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .savings-amount {
+            color: #fff;
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .calculator-container {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator-container">
+        <h1>🚢 Calculadora de Optimización Logística</h1>
+        <p class="subtitle">Ajusta los parámetros para ver el impacto en tu operación</p>
+
+        <div class="input-section">
+            <div class="input-group">
+                <label for="contenedores">Número de Contenedores por Mes</label>
+                <div class="input-wrapper">
+                    <input type="range" id="contenedores" min="5" max="100" value="20" step="5">
+                    <span class="value-display" id="contenedoresValue">20</span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="personal">Personal de Descarga (personas)</label>
+                <div class="input-wrapper">
+                    <input type="range" id="personal" min="2" max="6" value="3" step="1">
+                    <span class="value-display" id="personalValue">3</span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="tiempoDescarga">Tiempo de Descarga Actual (horas)</label>
+                <div class="input-wrapper">
+                    <input type="range" id="tiempoDescarga" min="3" max="8" value="5" step="0.5">
+                    <span class="value-display" id="tiempoDescargaValue">5.0</span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="costoHora">Costo por Hora de Personal ($)</label>
+                <div class="input-wrapper">
+                    <input type="range" id="costoHora" min="5" max="30" value="15" step="1">
+                    <span class="value-display" id="costoHoraValue">$15</span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="optimizacion">Nivel de Optimización (%)</label>
+                <div class="input-wrapper">
+                    <input type="range" id="optimizacion" min="5" max="30" value="15" step="5">
+                    <span class="value-display" id="optimizacionValue">15%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-section">
+            <h2 class="results-title">📊 Resultados de la Optimización</h2>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-label">Tiempo Actual</div>
+                    <div class="result-value" id="tiempoActual">5.0</div>
+                    <div class="result-unit">horas/contenedor</div>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-label">Tiempo Optimizado</div>
+                    <div class="result-value" id="tiempoOptimizado">4.25</div>
+                    <div class="result-unit">horas/contenedor</div>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-label">Ahorro de Tiempo</div>
+                    <div class="result-value" id="ahorroTiempo">0.75</div>
+                    <div class="result-unit">horas/contenedor</div>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-label">Ahorro Mensual</div>
+                    <div class="result-value" id="ahorroMensual">15</div>
+                    <div class="result-unit">horas totales</div>
+                </div>
+            </div>
+
+            <div class="comparison-section">
+                <h3 class="comparison-title">Comparación Antes vs. Después</h3>
+
+                <div class="comparison-bar">
+                    <div class="comparison-label">
+                        <span>Tiempo Actual</span>
+                        <span id="barActual">100 horas/mes</span>
+                    </div>
+                    <div class="bar-container">
+                        <div class="bar-fill" id="barActualFill" style="width: 100%;">100%</div>
+                    </div>
+                </div>
+
+                <div class="comparison-bar">
+                    <div class="comparison-label">
+                        <span>Tiempo Optimizado</span>
+                        <span id="barOptimizado">85 horas/mes</span>
+                    </div>
+                    <div class="bar-container">
+                        <div class="bar-fill" id="barOptimizadoFill"
+                            style="width: 85%; background: linear-gradient(90deg, #10b981 0%, #64ffda 100%);">85%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="savings-highlight">
+                <h3>💰 Ahorro Económico Proyectado</h3>
+                <div class="savings-amount" id="ahorroEconomico">$225/mes</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Referencias a elementos
+        const inputs = {
+            contenedores: document.getElementById('contenedores'),
+            personal: document.getElementById('personal'),
+            tiempoDescarga: document.getElementById('tiempoDescarga'),
+            costoHora: document.getElementById('costoHora'),
+            optimizacion: document.getElementById('optimizacion')
+        };
+
+        const displays = {
+            contenedores: document.getElementById('contenedoresValue'),
+            personal: document.getElementById('personalValue'),
+            tiempoDescarga: document.getElementById('tiempoDescargaValue'),
+            costoHora: document.getElementById('costoHoraValue'),
+            optimizacion: document.getElementById('optimizacionValue')
+        };
+
+        const results = {
+            tiempoActual: document.getElementById('tiempoActual'),
+            tiempoOptimizado: document.getElementById('tiempoOptimizado'),
+            ahorroTiempo: document.getElementById('ahorroTiempo'),
+            ahorroMensual: document.getElementById('ahorroMensual'),
+            barActual: document.getElementById('barActual'),
+            barOptimizado: document.getElementById('barOptimizado'),
+            barActualFill: document.getElementById('barActualFill'),
+            barOptimizadoFill: document.getElementById('barOptimizadoFill'),
+            ahorroEconomico: document.getElementById('ahorroEconomico')
+        };
+
+        // Función para calcular resultados
+        function calcular() {
+            const contenedores = parseInt(inputs.contenedores.value);
+            const personal = parseInt(inputs.personal.value);
+            const tiempoDescarga = parseFloat(inputs.tiempoDescarga.value);
+            const costoHora = parseFloat(inputs.costoHora.value);
+            const optimizacion = parseFloat(inputs.optimizacion.value) / 100;
+
+            // Cálculos
+            const tiempoActual = tiempoDescarga;
+            const tiempoOptimizado = tiempoDescarga * (1 - optimizacion);
+            const ahorroTiempo = tiempoActual - tiempoOptimizado;
+            const ahorroMensual = ahorroTiempo * contenedores;
+
+            const tiempoTotalActual = tiempoActual * contenedores;
+            const tiempoTotalOptimizado = tiempoOptimizado * contenedores;
+
+            const costoActual = tiempoTotalActual * personal * costoHora;
+            const costoOptimizado = tiempoTotalOptimizado * personal * costoHora;
+            const ahorroEconomico = costoActual - costoOptimizado;
+
+            // Actualizar displays de valores
+            displays.contenedores.textContent = contenedores;
+            displays.personal.textContent = personal;
+            displays.tiempoDescarga.textContent = tiempoDescarga.toFixed(1);
+            displays.costoHora.textContent = '$' + costoHora;
+            displays.optimizacion.textContent = (optimizacion * 100).toFixed(0) + '%';
+
+            // Actualizar resultados
+            results.tiempoActual.textContent = tiempoActual.toFixed(2);
+            results.tiempoOptimizado.textContent = tiempoOptimizado.toFixed(2);
+            results.ahorroTiempo.textContent = ahorroTiempo.toFixed(2);
+            results.ahorroMensual.textContent = ahorroMensual.toFixed(1);
+
+            // Actualizar barras de comparación
+            results.barActual.textContent = tiempoTotalActual.toFixed(0) + ' horas/mes';
+            results.barOptimizado.textContent = tiempoTotalOptimizado.toFixed(0) + ' horas/mes';
+
+            const porcentajeOptimizado = (tiempoTotalOptimizado / tiempoTotalActual) * 100;
+            results.barOptimizadoFill.style.width = porcentajeOptimizado + '%';
+            results.barOptimizadoFill.textContent = porcentajeOptimizado.toFixed(0) + '%';
+
+            // Actualizar ahorro económico
+            results.ahorroEconomico.textContent = '$' + ahorroEconomico.toFixed(0) + '/mes';
+        }
+
+        // Event listeners para todos los inputs
+        Object.values(inputs).forEach(input => {
+            input.addEventListener('input', calcular);
+        });
+
+        // Calcular valores iniciales
+        calcular();
+    </script>
+</body>
+
+</html>
